@@ -1,0 +1,31 @@
+name: Importar produtos aprovados
+on:
+  push:
+    branches: [main]
+    paths:
+      - incoming-products.json
+      - scripts/merge-products.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Mesclar ofertas aprovadas
+        run: node scripts/merge-products.mjs
+      - name: Publicar catálogo
+        run: |
+          if ! git diff --quiet -- products.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add products.json
+            git commit -m "Atualizar catálogo com produtos aprovados"
+            git push
+          fi
