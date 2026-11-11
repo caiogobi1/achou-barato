@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Preparar catálogo | Buscoubarato</title>
+<style>body{font:16px system-ui,Arial;background:#f5f7fb;color:#172033;margin:0}main{max-width:850px;margin:30px auto;padding:22px}textarea{width:100%;min-height:260px;box-sizing:border-box;padding:12px;border:1px solid #b8c3d5;border-radius:10px;font:13px monospace}button{background:#172554;color:white;border:0;border-radius:9px;padding:13px 18px;font-weight:bold;cursor:pointer}pre{white-space:pre-wrap}code{overflow-wrap:anywhere} .note{background:#fff4d7;padding:14px;border-radius:10px}</style></head><body><main><h1>Preparar catálogo do Buscoubarato</h1><p>Ferramenta local para transformar uma lista de produtos em <code>products.json</code>. Nada é enviado para servidores. Não conecte credenciais do Mercado Livre aqui.</p><p>Cole uma linha por produto, separando as colunas com TAB (copiar e colar de uma planilha). Primeira linha: <code>name cat store url image price oldPrice priceDate affiliate</code>. Os campos <code>image</code>, <code>price</code>, <code>oldPrice</code> e <code>priceDate</code> são opcionais. Use apenas links de afiliado que você obteve oficialmente.</p><textarea id="data" spellcheck="false" placeholder="name&#9;cat&#9;store&#9;url&#9;image&#9;price&#9;oldPrice&#9;priceDate&#9;affiliate"></textarea><p><button id="download">Validar e baixar products.json</button></p><pre id="status" role="status"></pre><div class="note">Este arquivo não publica produtos sozinho. Depois de baixar, envie <code>products.json</code> para a raiz do repositório <code>caiogobi1/achou-barato</code>. O site já lê esse arquivo. Não inclua preços ou fotos não verificados.</div></main><script>
+document.getElementById('download').onclick=()=>{
+const status=document.getElementById('status');status.textContent='';
+try{
+const lines=document.getElementById('data').value.trim().split(/\r?\n/).filter(Boolean);
+if(lines.length<2)throw Error('Inclua cabeçalho e pelo menos um produto.');
+const headers=lines.shift().split('\t').map(x=>x.trim());
+for(const required of ['name','cat','store','url'])if(!headers.includes(required))throw Error('Coluna obrigatória ausente: '+required);
+const out=[],seen=new Set(),errors=[];
+lines.forEach((line,i)=>{
+const cells=line.split('\t'),p={};headers.forEach((h,j)=>{if(h&&cells[j]?.trim())p[h]=cells[j].trim()});
+if(!p.name||!p.cat||!p.store||!p.url){errors.push('Linha '+(i+2)+': dados obrigatórios ausentes');return}
+try{const u=new URL(p.url);if(!['https:','http:'].includes(u.protocol))throw Error()}catch{errors.push('Linha '+(i+2)+': URL inválida');return}
+if(p.image){try{const u=new URL(p.image);if(!['https:','http:'].includes(u.protocol))throw Error()}catch{errors.push('Linha '+(i+2)+': URL da imagem inválida');return}}
+if(seen.has(p.url)){errors.push('Linha '+(i+2)+': link duplicado');return}seen.add(p.url);
+p.affiliate=String(p.affiliate||'').toLowerCase()==='true'||String(p.affiliate||'').toLowerCase()==='sim';
+if(!p.affiliate)delete p.affiliate;
+out.push(p)
+});
+if(errors.length)throw Error(errors.join('\n'));
+if(!out.length)throw Error('Nenhum produto válido.');
+const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='products.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+status.textContent=out.length+' produto(s) validados. Arquivo baixado. Publique no GitHub para aparecer no site.';
+}catch(e){status.textContent='Erro: '+e.message}
+};
+</script></body></html>
