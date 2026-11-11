@@ -5,7 +5,7 @@ document.getElementById('download').onclick=async()=>{
 const status=document.getElementById('status');status.textContent='';
 try{
 const input=document.getElementById('data').value.trim();const lines=input?input.split(/\r?\n/).filter(Boolean):[];
-const mlText=document.getElementById('mljson').value.trim();const source=document.getElementById('source').value;if(lines.length<2&&!mlText)throw Error('Inclua uma lista TAB ou JSON do Mercado Livre.');
+const mlText=document.getElementById('mljson').value.trim();const source=document.getElementById('source').value;if(!lines.length&&!mlText)throw Error('Inclua uma lista TAB ou JSON do Mercado Livre.');
 const headers=lines.length>=2?lines.shift().split('\t').map(x=>x.trim()):[];
 if(lines.length)for(const required of ['name','cat','store','url'])if(!headers.includes(required))throw Error('Coluna obrigatória ausente: '+required);
 const out=[],seen=new Set(),errors=[];
