@@ -6,6 +6,7 @@ on:
       - incoming-products.json
       - scripts/merge-products.mjs
       - scripts/check-catalog.mjs
+      - scripts/merge-products.test.mjs
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Testar importador com dados de exemplo
+        run: node --test scripts/merge-products.test.mjs
       - name: Mesclar ofertas aprovadas
         run: node scripts/merge-products.mjs
       - name: Validar catálogo antes da publicação
