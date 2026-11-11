@@ -7,9 +7,11 @@ for(const p of current){if(p?.url)map.set(p.url,p)}
 let added=0,updated=0,skipped=0;
 for(const p of incoming){
  if(!p||typeof p.name!=='string'||typeof p.url!=='string'||!/^https:\/\//i.test(p.url)||!p.store){skipped++;continue}
- const host=new URL(p.url).hostname.toLowerCase();
+ let host;
+ try { host=new URL(p.url).hostname.toLowerCase(); } catch { skipped++; continue; }
  if(!['meli.la','mercadolivre.com.br','www.mercadolivre.com.br','produto.mercadolivre.com.br'].includes(host)){skipped++;continue}
  if(p.affiliate!==true){skipped++;continue}
+ if(p.url.includes(' ')||p.name.trim().length===0){skipped++;continue}
  const prior=map.get(p.url);
  const next={...prior,...p,source:p.source||prior?.source||'recomendacoes'};
  if(prior){map.set(p.url,next);updated++}else{map.set(p.url,next);added++}
