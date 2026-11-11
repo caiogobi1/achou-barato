@@ -5,6 +5,7 @@ on:
     paths:
       - incoming-products.json
       - scripts/merge-products.mjs
+      - scripts/check-catalog.mjs
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,6 +21,8 @@ jobs:
           node-version: '22'
       - name: Mesclar ofertas aprovadas
         run: node scripts/merge-products.mjs
+      - name: Validar catálogo antes da publicação
+        run: node scripts/check-catalog.mjs
       - name: Publicar catálogo
         run: |
           if ! git diff --quiet -- products.json; then
