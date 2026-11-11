@@ -25,5 +25,41 @@
     "store": "Mercado Livre",
     "affiliate": true,
     "priceDate": "10/11/2026"
+  },
+  {
+    "name": "Motorola Moto G06 128 GB, 4 GB RAM — verde (preço no Pix)",
+    "cat": "Eletrônicos",
+    "price": "R$ 798,30",
+    "url": "https://meli.la/2vdhmGp",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "10/11/2026"
+  },
+  {
+    "name": "Kit 10 potes de vidro herméticos Vitrex 370 ml",
+    "cat": "Casa",
+    "price": "R$ 68,90",
+    "url": "https://meli.la/2DtC3ow",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "10/11/2026"
+  },
+  {
+    "name": "Câmera lâmpada Casenn Wi-Fi 360° — branca",
+    "cat": "Eletrônicos",
+    "price": "R$ 55,91",
+    "url": "https://meli.la/28jg2vJ",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "10/11/2026"
+  },
+  {
+    "name": "Cascata LED 400 luzes branco frio, 10 m, 8 funções",
+    "cat": "Casa",
+    "price": "R$ 61,97",
+    "url": "https://meli.la/31GunhC",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "10/11/2026"
   }
 ]
