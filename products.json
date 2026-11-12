@@ -163,5 +163,93 @@
     "price": "",
     "image": "",
     "source": "recomendacoes"
+  },
+  {
+    "name": "Kit de marcadores para quadro branco",
+    "cat": "Papelaria",
+    "price": "R$ 32,90",
+    "url": "https://meli.la/2DfXnR5",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Caixa de som Boombox Basike 160W Bluetooth RGB IPX6",
+    "cat": "Eletrônicos",
+    "price": "R$ 420,00",
+    "url": "https://meli.la/15cER2D",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Gabinete para banheiro com cuba e espelho 40 cm",
+    "cat": "Casa",
+    "price": "",
+    "url": "https://meli.la/28o8gnS",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Creatina monohidratada 500 g",
+    "cat": "Esportes",
+    "price": "R$ 44,90",
+    "url": "https://meli.la/1N5LTeG",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Raquete de tênis Wilson Impact 16x19 azul e verde",
+    "cat": "Esportes",
+    "price": "R$ 359,90",
+    "url": "https://meli.la/1WQf4St",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Eletroestimulador massageador TENS fisioterapia 127/220V",
+    "cat": "Saúde",
+    "price": "R$ 154,99",
+    "url": "https://meli.la/1efq4Bt",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Kit 3 bermudas masculinas tactel com elastano",
+    "cat": "Moda",
+    "price": "R$ 78,80",
+    "url": "https://meli.la/1mLXEeZ",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
+  },
+  {
+    "name": "Regata oversized masculina lisa",
+    "cat": "Moda",
+    "price": "R$ 31,93",
+    "url": "https://meli.la/1GPWh4P",
+    "store": "Mercado Livre",
+    "affiliate": true,
+    "priceDate": "11/11/2026",
+    "source": "recomendacoes",
+    "image": ""
   }
 ]
