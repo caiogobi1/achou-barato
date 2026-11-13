@@ -3556,5 +3556,20 @@
     "shopeeItemId": "58217626503",
     "productUrl": "https://shopee.com.br/product/1921399168/58217626503",
     "commissionRate": "5%"
+  },
+  {
+    "name": "Smart TV 43\" Philco QLED HDR10 Roku TV P43KRB",
+    "cat": "Ofertas Shopee",
+    "store": "Shopee",
+    "url": "https://s.shopee.com.br/7KyVFBrdTA",
+    "affiliate": true,
+    "source": "recomendacoes",
+    "image": "",
+    "price": "R$ 1,4 mil (aprox.)",
+    "priceDate": "12/11/2026",
+    "shopName": "Philco Oficial",
+    "shopeeItemId": "58210633027",
+    "productUrl": "https://shopee.com.br/product/811034337/58210633027",
+    "commissionRate": "6%"
   }
 ]
