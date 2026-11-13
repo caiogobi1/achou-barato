@@ -96,16 +96,6 @@
     "priceDate": "12/11/2026"
   },
   {
-    "name": "Produto 9 — identificação pendente",
-    "cat": "Casa e Cozinha",
-    "store": "Mercado Livre",
-    "url": "https://meli.la/1FrVAtP",
-    "affiliate": true,
-    "source": "recomendacoes",
-    "image": "",
-    "catalogNumber": 9
-  },
-  {
     "name": "Mala de bordo rígida Sweet Studio prateada em ABS",
     "cat": "Moda",
     "store": "Mercado Livre",
@@ -152,16 +142,6 @@
     "catalogNumber": 13,
     "price": "R$ 58,99",
     "priceDate": "12/11/2026"
-  },
-  {
-    "name": "Produto 14 — identificação pendente",
-    "cat": "Casa e Cozinha",
-    "store": "Mercado Livre",
-    "url": "https://meli.la/2osynuz",
-    "affiliate": true,
-    "source": "recomendacoes",
-    "image": "",
-    "catalogNumber": 14
   },
   {
     "name": "Churrasqueira elétrica de mesa Elgin 42CHU2001000 preta",
@@ -1822,16 +1802,6 @@
     "catalogNumber": 155
   },
   {
-    "name": "Produto 156 — identificação pendente",
-    "cat": "Casa e Cozinha",
-    "store": "Mercado Livre",
-    "url": "https://meli.la/1AFAktx",
-    "affiliate": true,
-    "source": "recomendacoes",
-    "image": "",
-    "catalogNumber": 156
-  },
-  {
     "name": "Creatina Soldiers Nutrition 500 g",
     "cat": "Saúde",
     "price": "R$ 44,90",
@@ -1854,18 +1824,6 @@
     "source": "recomendacoes",
     "image": "data:image/webp;base64,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",
     "catalogNumber": 158
-  },
-  {
-    "name": "Produto 159 — identificação pendente",
-    "cat": "Esportes",
-    "price": "R$ 44,90",
-    "url": "https://meli.la/1WQf4St",
-    "store": "Mercado Livre",
-    "affiliate": true,
-    "priceDate": "11/11/2026",
-    "source": "recomendacoes",
-    "image": "",
-    "catalogNumber": 159
   },
   {
     "name": "Relógio Orient",
