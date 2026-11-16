@@ -1,9 +1,10 @@
-name: Telegram - 2 links afiliados por dia
+name: Telegram - ate 10 links afiliados por dia
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * *'
+    # 08h, 11h, 14h, 17h e 20h em Brasilia (UTC-3)
+    - cron: '0 11,14,17,20,23 * * *'
 
 permissions:
   contents: write
