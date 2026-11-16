@@ -48,7 +48,7 @@ def main():
         return
     for item in selected:
         name, url = item["name"].strip(), item["url"]
-        message = (f"🛍️ {name}\\n\\n🔗 Confira o preço atual na loja:\\n{url}\\n\\n"
+        message = (f"🛍️ {name}\n\n🔗 Confira o preço atual na loja:\n{url}\n\n"
                    "Publicidade: link de afiliado. Preço e disponibilidade podem mudar.")
         photo = item.get("image")
         photo_sent = False
@@ -64,10 +64,10 @@ def main():
                             fields = {"chat_id": chat, "caption": message}
                             body = bytearray()
                             for key, value in fields.items():
-                                body.extend(f"--{boundary}\\r\\nContent-Disposition: form-data; name=\\\"{key}\\\"\\r\\n\\r\\n{value}\\r\\n".encode())
-                            body.extend(f"--{boundary}\\r\\nContent-Disposition: form-data; name=\\\"photo\\\"; filename=\\\"product.{mime.split('/')[-1]}\\\"\\r\\nContent-Type: {mime}\\r\\n\\r\\n".encode())
+                                body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\\"{key}\\"\r\n\r\n{value}\r\n".encode())
+                            body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\\"photo\\"; filename=\\"product.{mime.split('/')[-1]}\\"\r\nContent-Type: {mime}\r\n\r\n".encode())
                             body.extend(raw)
-                            body.extend(f"\\r\\n--{boundary}--\\r\\n".encode())
+                            body.extend(f"\r\n--{boundary}--\r\n".encode())
                             request = urllib.request.Request(
                                 f"https://api.telegram.org/bot{token}/sendPhoto",
                                 data=bytes(body),
