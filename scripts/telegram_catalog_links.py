@@ -64,8 +64,8 @@ def main():
                             fields = {"chat_id": chat, "caption": message}
                             body = bytearray()
                             for key, value in fields.items():
-                                body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\\"{key}\\"\r\n\r\n{value}\r\n".encode())
-                            body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\\"photo\\"; filename=\\"product.{mime.split('/')[-1]}\\"\r\nContent-Type: {mime}\r\n\r\n".encode())
+                                body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{key}\"\r\n\r\n{value}\r\n".encode())
+                            body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"product.{mime.split('/')[-1]}\"\r\nContent-Type: {mime}\r\n\r\n".encode())
                             body.extend(raw)
                             body.extend(f"\r\n--{boundary}--\r\n".encode())
                             request = urllib.request.Request(
