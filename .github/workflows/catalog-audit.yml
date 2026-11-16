@@ -1,0 +1,23 @@
+name: Auditoria do catalogo (somente leitura)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 11 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout catalog
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit catalog without modifying products
+        run: python scripts/audit_catalog.py
